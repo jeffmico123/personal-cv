@@ -9,6 +9,8 @@ Both branches started from the same baseline commit (`b2d6d7d`):
 
 After merging `branch-one` into `main`, merging `branch-two` produced a content conflict in `merge-conflict-demo.txt`. Git marked the two competing versions with `<<<<<<<`, `=======`, and `>>>>>>>`.
 
+The unmerged file showed the `<<<<<<< HEAD` section containing the `branch-one` version, the `=======` separator, and the `>>>>>>> branch-two` terminator.
+
 ## Resolution
 
 The conflict was resolved on `main` by combining both changes into one sentence:
@@ -19,7 +21,7 @@ The conflict markers were removed, and the final merge commit records both branc
 
 ## Verification
 
-The completed activity can be checked in the repository by viewing `main`, `branch-one`, and `branch-two`, then comparing their `merge-conflict-demo.txt` versions. The merge commit is the latest commit on `main`.
+The completed activity can be checked in the repository by viewing `main`, `branch-one`, and `branch-two`, then comparing their `merge-conflict-demo.txt` versions. The merge commit is recorded in the `main` history.
 
 Commands used:
 

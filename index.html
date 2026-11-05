@@ -1,0 +1,442 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal CV and portfolio website">
+    <title>My Personal CV | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            color: #253247;
+            line-height: 1.7;
+            transition: 0.3s;
+        }
+
+        body.dark {
+            background: #111827;
+            color: #e5e7eb;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .navbar {
+            background: #172b4d;
+            color: white;
+            padding: 16px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover {
+            color: #60a5fa;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 16px;
+            font-size: 14px;
+        }
+
+        .theme-btn {
+            background: #334b70;
+            color: white;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #172b4d, #2563a6);
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .profile-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #dbeafe;
+            color: #172b4d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 45px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            border: 4px solid white;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #dbeafe;
+        }
+
+        .hero-buttons {
+            margin-top: 25px;
+        }
+
+        .primary-btn {
+            background: white;
+            color: #172b4d;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .primary-btn:hover {
+            background: #dbeafe;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            scroll-margin-top: 90px;
+        }
+
+        body.dark section {
+            background: #1f2937;
+            color: #e5e7eb;
+        }
+
+        section h2 {
+            color: #1d4e89;
+            border-bottom: 2px solid #dbeafe;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        body.dark section h2 {
+            color: #93c5fd;
+            border-color: #374151;
+        }
+
+        .info {
+            margin-bottom: 10px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background: #e0edff;
+            color: #174477;
+            padding: 9px 17px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        body.dark .skill {
+            background: #334155;
+            color: #bfdbfe;
+        }
+
+        .education-card {
+            border-left: 4px solid #2563eb;
+            padding: 5px 15px;
+        }
+
+        .contact-link {
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        body.dark .contact-link {
+            color: #93c5fd;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #172b4d;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .back-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2563eb;
+            color: white;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 20px;
+        }
+
+        @media (max-width: 650px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero {
+                padding: 65px 15px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            section {
+                padding: 22px;
+            }
+        }
+
+        @media print {
+            body, body.dark {
+                background: white;
+                color: black;
+            }
+
+            .navbar, .hero-buttons, .back-top, footer {
+                display: none;
+            }
+
+            .hero {
+                background: white;
+                color: black;
+                padding: 20px;
+            }
+
+            .hero p {
+                color: black;
+            }
+
+            section, body.dark section {
+                background: white;
+                color: black;
+                box-shadow: none;
+                border: 1px solid #ddd;
+                break-inside: avoid;
+            }
+
+            section h2 {
+                color: black;
+            }
+
+            a {
+                color: black;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="logo">My Portfolio.</div>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <button class="theme-btn" onclick="toggleTheme()">
+            🌙 Dark Mode
+        </button>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="profile-circle">JM</div>
+<h1>Jeff Mico Y. Guerra</h1>
+<p>4th Year BS Information Technology Student</p>
+<p>Future Web Developer | Technology Enthusiast</p>
+
+        <div class="hero-buttons">
+            <a href="#contact">
+                <button class="primary-btn">Contact Me</button>
+            </a>
+
+            <button class="primary-btn" onclick="window.print()">
+                Download / Print CV
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- ABOUT -->
+        <section id="about">
+            <h2>About Me</h2>
+
+            <p>
+                Hello! I am [YOUR COMPLETE NAME], an Information
+                Technology student at Davao del Norte State College.
+                I am passionate about technology, programming,
+                and web development.
+
+                I enjoy learning new skills, exploring different
+                technologies, and developing my knowledge to
+                become a successful IT professional.
+            </p>
+        </section>
+
+        <!-- PERSONAL INFORMATION -->
+        <section>
+            <h2>Personal Information</h2>
+
+           <p><strong>Full Name:</strong> Jeff Mico Y. Guerra</p>
+<p><strong>Year Level:</strong> 4th Year</p>
+<p><strong>Section:</strong> C</p>
+<p><strong>Course:</strong> Bachelor of Science in Information Technology</p>
+<p><strong>School:</strong> Davao del Norte State College</p>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education">
+            <h2>Educational Background</h2>
+
+            <div class="education-card">
+              <h3>Davao del Norte State College</h3>
+            <p>Bachelor of Science in Information Technology</p>
+<p>Panabo City, Davao del Norte</p>
+<p>2023 - Present</p>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills">
+            <h2>Technical Skills</h2>
+
+            <div class="skill-list">
+                <span class="skill">HTML</span>
+                <span class="skill">CSS</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">Python</span>
+                <span class="skill">Basic Networking</span>
+                <span class="skill">Microsoft Office</span>
+                <span class="skill">Visual Studio Code</span>
+            </div>
+        </section>
+
+        <!-- HOBBIES -->
+        <section id="hobbies">
+            <h2>Hobbies and Interests</h2>
+
+            <ul style="padding-left: 25px;">
+                <li>Reading books</li>
+                <li>Cycling</li>
+                <li>Cooking</li>
+                <li>Learning new technologies</li>
+                <li>Exploring web development</li>
+            </ul>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <h2>Contact Information</h2>
+
+      <p>
+    <strong>Email:</strong>
+    <a href="mailto:jmico12333@gmail.com">
+        jmico12333@gmail.com
+    </a>
+</p>
+
+<p>
+    <strong>GitHub:</strong>
+    <a href="https://github.com/jeffmico123"
+       target="_blank"
+       rel="noopener noreferrer">
+        Visit My GitHub
+    </a>
+</p>
+
+<p><strong>Location:</strong> Panabo City, Davao del Norte</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Jeff Mico Y. Guerra</p>
+        
+    </footer>
+
+    <button class="back-top"
+            onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+            aria-label="Back to top">
+        ↑
+    </button>
+
+    <script>
+        // DARK MODE
+        function toggleTheme() {
+            document.body.classList.toggle("dark");
+
+            const button = document.querySelector(".theme-btn");
+
+            if (document.body.classList.contains("dark")) {
+                button.textContent = "☀️ Light Mode";
+            } else {
+                button.textContent = "🌙 Dark Mode";
+            }
+        }
+    </script>
+
+</body>
+</html>

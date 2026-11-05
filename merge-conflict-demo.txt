@@ -1,1 +1,1 @@
-Project status: Initial portfolio version.
+Project status: Created a CV website for employers.

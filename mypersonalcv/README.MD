@@ -3,10 +3,10 @@
 
 ## Student Information
 
-- **Complete Name:** [Your Complete Name]
-- **Year Level:** [Your Year Level]
-- **Set/Section:** [Your Section]
-- **Subject:** [Your Subject Code and Subject Name]
+- **Complete Name:** Jeff Mico Guerra
+- **Year Level:** 4th Year
+- **Set/Section:**  C
+- **Subject:** IT415_BSIT4C
 - **School:** Davao del Norte State College
 - **Course:** Bachelor of Science in Information Technology
 

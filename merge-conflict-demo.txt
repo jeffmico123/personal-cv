@@ -1,1 +1,1 @@
-Project status: Built the portfolio with HTML and CSS.
+Project status: Built the portfolio with HTML and CSS and created a CV website for employers.
